@@ -1,0 +1,20 @@
+{
+    "name": "@infinite-scroll/react",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "dev": "vite"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.12",
+        "tsup": "^8.3.0",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.9"
+    }
+}
