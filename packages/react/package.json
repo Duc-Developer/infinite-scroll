@@ -4,17 +4,29 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsup src/index.ts --format cjs,esm --dts",
-        "dev": "vite"
+        "build": "tsup src/index.tsx --format cjs,esm --dts",
+        "dev": "vite",
+        "test": "vitest --coverage"
     },
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
+    "peerDependencies": {
+        "react": ">=18"
+    },
     "devDependencies": {
+        "@swc/core": "^1.7.42",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.0.1",
+        "@types/jest": "^29.5.14",
         "@types/react": "^18.3.12",
+        "@vitest/coverage-v8": "^2.1.4",
+        "jsdom": "^25.0.1",
         "tsup": "^8.3.0",
         "typescript": "^5.6.3",
-        "vite": "^5.4.9"
+        "vite": "^5.4.9",
+        "vitest": "^2.1.4"
     }
 }

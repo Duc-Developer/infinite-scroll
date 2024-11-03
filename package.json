@@ -10,10 +10,11 @@
     "dev": "lerna run dev",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-    "test": "vitest",
+    "test": "npx lerna run test",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "publish-packages": "changeset publish"
+    "publish-packages": "changeset publish",
+    "publish": "lerna publish from-package --yes"
   },
   "keywords": [
     "infinite-scroll",
@@ -24,6 +25,7 @@
   ],
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
+    "dotenv": "^16.4.5",
     "eslint": "^9.14.0",
     "lerna": "^8.1.9",
     "prettier": "^3.3.3",
