@@ -30,6 +30,7 @@ jobs:
         run: yarn test
 
       - name: Upload test coverage
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4
         with:
           name: test-coverage
