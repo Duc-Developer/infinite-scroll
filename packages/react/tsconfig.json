@@ -1,15 +1,15 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "jsx": "react", // Add this line
-      "allowSyntheticDefaultImports": true, // Add this line
-      "outDir": "./dist",
-      "rootDir": "./src"
-    },
-    "include": ["src"]
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src", "global.d.ts"]
+}

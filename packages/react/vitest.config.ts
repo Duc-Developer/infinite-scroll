@@ -19,6 +19,6 @@ export default defineConfig({
             ],
             include: ["src/**/*.{ts,tsx}"]
         },
-        watch: process.env.MODE === 'development'
+        watch: process.env.NODE_ENV === 'development'
     },
 });
