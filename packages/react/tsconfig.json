@@ -8,8 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": ["src", "global.d.ts"]
+  "include": ["src", "global.d.ts"],
+  "exclude": ["node_modules", "dist", "src/hooks"]
 }

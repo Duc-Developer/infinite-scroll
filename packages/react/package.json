@@ -19,8 +19,8 @@
         }
     },
     "scripts": {
-        "build": "rollup -c",
-        "dev": "rollup -c -w",
+        "build": "tsc && rollup -c",
+        "dev": "tsc && rollup -c -w",
         "test": "vitest --coverage"
     },
     "engines": {

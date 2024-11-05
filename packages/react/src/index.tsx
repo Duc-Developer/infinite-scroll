@@ -6,13 +6,14 @@ export type InfiniteScrollProps<elementType = unknown> = {
   children: React.ReactNode;
   height: number;
   className?: string;
+  classNameItem?: string;
   style?: React.CSSProperties;
   observerOptions?: Omit<IntersectionObserverInit, 'threshold'> & { threshold?: number };
 };
 
 const THRESHOLD = 15;
 const InfiniteScroll = <T,>(props: InfiniteScrollProps<T>) => {
-  const { children, className, style, height, observerOptions = {} } = props;
+  const { children, className, style, height, observerOptions = {}, classNameItem } = props;
   const childrenArray = React.Children.toArray(children) ?? [];
   const [positions, setPositions] = React.useState({
     start: 0,
@@ -99,14 +100,15 @@ const InfiniteScroll = <T,>(props: InfiniteScrollProps<T>) => {
 
       const ref = getReference(index, index === lastIndex);
 
-      let classNameItem = styles.infiniteScrollItem;
-      if (index === 0) classNameItem += ` ${styles.infiniteScrollItemFirst}`;
-      if (index === lastIndex) classNameItem += ` ${styles.infiniteScrollItemLast}`;
+      let classes = styles.infiniteScrollItem;
+      if (index === 0) classes += ` ${styles.infiniteScrollItemFirst}`;
+      if (index === lastIndex) classes += ` ${styles.infiniteScrollItemLast}`;
+      if (classNameItem) classes += ` ${classNameItem}`;
       return (
         <div
           key={React.isValidElement(child) ? child.key : index}
           ref={ref}
-          className={classNameItem}
+          className={classes}
           id={index === 0 ? "top" : index === lastIndex ? "bottom" : ""}
         >
           {child}

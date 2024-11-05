@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='app'>
       <h1>Demo for infinite scroll</h1>
-      <InfiniteScroll height={200}>
+      <InfiniteScroll height={300}>
        {data.map((item) => (
           <div key={item} className='item'>
             {item}
